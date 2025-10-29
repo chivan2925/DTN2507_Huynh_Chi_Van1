@@ -47,3 +47,6 @@ DELETE FROM Question WHERE Content Like 'câu hỏi%'
 --Update thông tin của account có id = 5 thành tên "Nguyễn Bá Lộc" và
 -- email thành loc.nguyenba@vti.com.vn
 UPDATE Account SET FullName = "Nguyễn Bá Lộc", email = "loc.nguyenba@vti.com.vn" WHERE AccountID = 5;
+
+--cập nhật i
+UPDATE GrouppAccount SET GroupID = '4' WHERE AccountID = '5';
