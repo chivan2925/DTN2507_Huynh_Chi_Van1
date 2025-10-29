@@ -27,14 +27,14 @@ CREATE OR REPLACE VIEW vw_MaxQuestionUsingExam AS (
 
 --Thông kê mỗi Question được sử dụng trong bao nhiêu Exam
 SELECT q.QuestionID, q.Content, COUNT(eq.ExamID) AS exam_count
-FROM Question q
-LEFT JOIN ExamQuestion eq ON eq.QuestionID = q.QuestionID
+FROM question q
+LEFT JOIN examquestion eq ON eq.QuestionID = q.QuestionID
 GROUP BY q.QuestionID, q.Content
 ORDER BY exam_count DESC, q.QuestionID;
 --Lấy ra Question có nhiều câu trả lời nhất
 SELECT q.QuestionID, q.Content, COUNT(a.AnswerID) AS answer_count
-FROM Question q
-JOIN Answer a ON a.QuestionID = q.QuestionID
+FROM question q
+JOIN answer a ON a.QuestionID = q.QuestionID
 GROUP BY q.QuestionID, q.Content
 HAVING COUNT(a.AnswerID) = (
   SELECT MAX(cnt)
@@ -50,10 +50,10 @@ FROM group g
 LEFT JOIN GroupAccount ga ON ga.GroupID = g.GroupID
 GROUP BY g.GroupID, g.GroupName;
 
- --
+ --chuc vu co it nhan vien nhat
  SELECT p.PositionID, p.PositionName, COUNT(a.AccountID) AS headcount
-FROM Position p
-LEFT JOIN Account a ON a.PositionID = p.PositionID
+FROM position p
+LEFT JOIN account a ON a.PositionID = p.PositionID
 GROUP BY p.PositionID, p.PositionName
 HAVING COUNT(a.AccountID) = (
   SELECT MIN(cn) FROM (
@@ -63,5 +63,13 @@ HAVING COUNT(a.AccountID) = (
     GROUP BY p2.PositionID
   ) x
 );
+
+
+-- gr khong co account
+SELECT g.GroupID, g.GroupName
+FROM group g
+LEFT JOIN groupaccount ga ON g.GroupID = ga.GroupID
+WHERE ga.AccountID IS NULL;
+
 
 
