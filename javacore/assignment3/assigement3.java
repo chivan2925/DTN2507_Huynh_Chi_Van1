@@ -1,7 +1,8 @@
+package assignment3;
 import java.io.Console;
 import java.text.DecimalFormat; 
 import java.util.Random;
-public class assigement {
+public class assigement3 {
     
 
     public int tinhTong(int a, int b) {
@@ -84,7 +85,7 @@ public class assigement {
             if(abc.charAt(i)!=' ' && abc.charAt(i+1)!=' ' && abc.charAt(i-1)==' ' ||
               (abc.charAt(i)!=' ' && abc.charAt(i+1)==' ' && abc.charAt(i-1)==' ' )
          ){
-                abc.charAt[i] = abc.charAt(i)
+                // abc.charAt(i) = abc.charAt(i) + 28;
             }
         }
     }
@@ -98,7 +99,7 @@ public class assigement {
         System.out.println("Gia tri a: " + a);
         Float f1 = 10.5f; 
         System.out.println("Gia tri f: " + f);
-        assigement demo = new assigement();
+        assigement3 demo = new assigement3();
         int tong = demo.tinhTong(a, (int)f); 
         System.out.println("tong " + tong);
         // nguyen thuy sang doi tuong
