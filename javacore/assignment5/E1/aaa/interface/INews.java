@@ -1,6 +1,6 @@
-package aaa.interface;
+package aaa.Interface;
 
-import java.util.*;
+// import java.util.*;
 
 public interface INews {
     void Display();

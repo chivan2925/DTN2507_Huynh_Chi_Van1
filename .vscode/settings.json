@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "demo_connectdatabase/src/main/java",
+        "DTN04/src",
+        "javacore/assignment10/src/main/java/frontend"
+    ]
+}

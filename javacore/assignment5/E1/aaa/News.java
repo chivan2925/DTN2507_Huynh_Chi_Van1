@@ -1,7 +1,8 @@
 package assignment5.E1.aaa;
 
 import java.util.Arrays;
-import assignment5.E1.aaa.interface.INews;
+// import assignment5.E1.aaa.Interface.INews;
+import aaa.Interface.INews;
 public class News implements INews {
     private int ID;
     private String Title;
